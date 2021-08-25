@@ -1,0 +1,240 @@
+*{
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+path,i,svg{
+    pointer-events: none;
+    
+}
+.colors{
+    display: flex;
+    min-height: 90vh;
+    color:rgb(51,51,51);
+   
+    
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    background-color: rgba(201, 183, 198, 0.904);
+}
+.color{
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:center;
+    flex:1;
+    position: relative;
+    overflow: hidden;
+    /* border:2px solid red; */
+    
+}
+.color h3{
+cursor: pointer;
+font-size: 2rem;
+
+
+}
+.controls{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.slider{
+
+
+    border-top-right-radius: 0.5rem;
+    opacity: 0;
+    display: flex;
+    width:80%;
+    flex-direction: column;
+    position:absolute;
+    background-color: rgb(224, 191, 191);
+    bottom: 0%;
+    padding:1rem;
+    transition:all 0.4s ease-in-out;
+    transform: translateY(5rem);
+  
+}
+
+.slider.active{
+    transform: translateY(0rem);
+    opacity: 1;
+
+
+}
+.lock{
+    transition: all 0.5s ease;
+}
+.slider button{
+    position:absolute;
+    width: 1rem;
+    height: 1rem;
+    top:0;
+    right:0;
+    background: rgb(53, 51, 51);
+    color:white;
+    cursor:pointer;
+   
+    border-radius: 50%;
+    font-weight: bold;
+    
+}
+.slider input{
+    -webkit-appearance: none;
+    border-radius: 1rem;
+    
+    height: 0.25rem;
+    
+}
+.panel-container{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    height: 20vh;
+}
+
+.panel-container button{
+    margin: 1rem;
+    padding:1rem 2rem;
+    background-color:rgb(155, 155, 219);
+    cursor:pointer;
+    border-radius: 1rem;
+   
+}
+
+.panel-container p{
+    font-size: 1.2rem;
+}
+
+.library-panel,.generate-panel,.save-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.adjust,.lock{
+    font-size: 2rem;
+    background: none;
+    border:none;
+    margin: 0.8rem;
+    
+}
+
+
+.copy-container,.save-container,.library-container{
+    position: fixed;
+    background: rgb(0,0,0,0.7);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content:center;
+    transition:all 0.7s ease;
+
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    
+}
+.copy-popup,.save-popup,.library-popup{
+    height: 9rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20vh;
+    border-radius:1.5rem;
+    transition:all 0.7s ease-in-out;
+    transform: translateY(-2rem);
+    background-color: rgb(251, 255, 255);
+    padding: 1rem;
+
+}
+.library-popup{
+    height: 40%;
+}
+
+.save-popup .close-save,.library-popup .close-library{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background: rgb(53, 51, 51);
+    color:white;
+    cursor:pointer;
+    width: 1rem;
+    height: 1rem;
+   
+    border-radius: 50%;
+    font-weight: bold;
+
+}
+
+.submit-save{
+    padding: 0.3rem;
+    margin:0.3rem;
+    border-radius: 0.2rem;
+}
+
+.copy-container.active,.save-container.active,.library-container.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.copy-popup.active,.save-popup.active,.library-popup.active{
+    transform: translateY(0rem);
+
+}
+
+.library-popup{
+    min-width: 40%;
+    padding: 1rem;
+    display: flex;
+    justify-content:flex-start;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    max-height: 50vh;
+}
+
+.custom-palette{
+    display:flex;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 100%;
+    padding: 2rem;
+
+
+}
+
+.small-preview{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    
+    
+    
+}
+.small-preview h4{
+    flex:1;
+}
+.small-preview div{
+    height: 3rem;
+    width: 2rem;
+    
+    
+}
+.pick-palette-btn{
+    height: 3rem;
+    padding: 1rem;
+    border: none;
+    background-color: aquamarine;
+    border-radius: 0.2rem;
+}
